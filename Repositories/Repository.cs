@@ -28,6 +28,11 @@ namespace Blog.Repositories
         public void Delete(TModel model){
             _sqlConnection.Delete<TModel>(model);   
         }
+
+        public void Delete(int id){
+            var role = _sqlConnection.Get<TModel>(id);
+            _sqlConnection.Delete<TModel>(role);  
+        }
         public void Update(TModel model) {
             _sqlConnection.Update<TModel>(model);   
         }
